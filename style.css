@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700;800&display=swap');
 
-/* --- 🎨 Core Styling & Theme Variables --- */
+/* --- 🎨 Core Theme Variables --- */
 :root {
     --bg-dark: #050508;
     --bg-card: #0d0e12;
@@ -31,7 +31,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* --- 🧭 Navigation Bar --- */
+/* --- 🧭 Global Navigation --- */
 header {
     display: flex;
     justify-content: space-between;
@@ -66,7 +66,7 @@ nav a:hover {
     color: var(--accent-neon);
 }
 
-/* --- 🚀 Asymmetrical Hero Layout --- */
+/* --- 🚀 Asymmetrical Typography Hero --- */
 #hero {
     height: 100vh;
     display: grid;
@@ -104,7 +104,7 @@ nav a:hover {
     z-index: 1;
 }
 
-/* --- 🔲 Global Section Shell --- */
+/* --- 🔲 Structure Containers --- */
 section {
     padding: 10rem 4rem;
     max-width: 1400px;
@@ -130,7 +130,7 @@ section h2::before {
     -webkit-text-fill-color: var(--accent-blue);
 }
 
-/* --- 💻 Data Scraping Showcase Cards --- */
+/* --- 💻 Technical Showcase Cards --- */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -209,7 +209,7 @@ section h2::before {
     border-radius: 2px;
 }
 
-/* --- 📸 Interests Gallery --- */
+/* --- 📸 Image Galleries --- */
 .hobbies-subtitle {
     color: var(--text-muted);
     margin-top: -2.5rem;
@@ -255,7 +255,7 @@ section h2::before {
     filter: grayscale(0%);
 }
 
-/* --- 📄 Seamless Document Section --- */
+/* --- 📄 Interactive CV Frame --- */
 .cv-container {
     max-width: 1000px;
     margin: 0 auto;
@@ -296,7 +296,7 @@ section h2::before {
     color: var(--bg-dark);
 }
 
-/* --- ✉️ Contact Forms --- */
+/* --- ✉️ Centered Portfolio Connection Button --- */
 #contact {
     display: flex;
     flex-direction: column;
@@ -314,7 +314,6 @@ section h2::before {
     line-height: 1.6;
 }
 
-/* Big, Bold Agency Action Button */
 .agency-contact-btn {
     display: inline-block;
     font-family: 'Syne', sans-serif;
@@ -338,7 +337,8 @@ section h2::before {
     box-shadow: 0 0 30px var(--neon-glow);
     transform: translateY(-3px);
 }
-/* --- 🏢 Redesigned Industrial Footer --- */
+
+/* --- 🏢 System Footer --- */
 footer {
     background-color: #0d0e12;
     padding: 6rem 4rem;
@@ -371,41 +371,127 @@ footer {
     font-weight: 500;
 }
 
-/* --- 📱 Responsiveness Adaptations --- */
-@media (max-width: 1100px) {
+/* --- 📱 Viewport Responsive System --- */
+@media (max-width: 1200px) {
+    #hero h1 {
+        font-size: 4.8rem;
+    }
+    section h2 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    header {
+        padding: 2rem;
+    }
+
     #hero {
         grid-template-columns: 1fr;
+        height: auto;
+        padding: 10rem 2rem 4rem 2rem;
         text-align: center;
-        padding-top: 8rem;
+        gap: 3rem;
     }
+
+    #hero h1 {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+    }
+
     #hero::after {
-        display: none;
+        position: relative;
+        right: auto;
+        width: 100%;
+        max-width: 450px;
+        height: 55vh;
+        margin: 0 auto;
+        display: block;
+        box-shadow: 15px -15px 0px var(--accent-blue);
     }
-    .projects-grid, .hobbies-grid {
+
+    .projects-grid {
         grid-template-columns: 1fr;
+        gap: 2.5rem;
     }
+
+    .hobbies-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
     .footer-content {
         grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
     }
 }
 
 @media (max-width: 768px) {
     header {
-        padding: 2rem 1.5rem;
+        padding: 1.5rem;
     }
+
     nav {
-        display: none;
+        display: none; 
     }
+
+    #hero {
+        padding-top: 8rem;
+    }
+
     #hero h1 {
-        font-size: 3.5rem;
+        font-size: 2.8rem;
+        letter-spacing: -1px;
     }
-    section, footer {
+
+    #hero::after {
+        height: 45vh;
+        max-width: 100%;
+    }
+
+    section {
         padding: 6rem 1.5rem;
     }
+
     section h2 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        margin-bottom: 2.5rem;
     }
+
+    .project-card {
+        padding: 3rem 2rem;
+    }
+
+    .project-card h3 {
+        font-size: 1.8rem;
+    }
+
+    .hobbies-subtitle, .contact-subtitle {
+        font-size: 1rem;
+        margin-top: -1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .hobbies-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hobby-card img {
+        height: 360px;
+    }
+
+    .agency-contact-btn {
+        width: 100%;
+        padding: 1.2rem 2rem;
+        font-size: 1rem;
+    }
+
     .footer-content {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    footer {
+        padding: 4rem 1.5rem;
     }
 }
