@@ -23,7 +23,7 @@ hero.innerHTML = `
 // Render Projects Section (Expanded Case Study Content)
 const projectsSection = document.getElementById('projects');
 projectsSection.innerHTML = `
-    <h2>Engineered Solutions</h2>
+    <h2>Projects</h2>
     <div class="projects-grid">
         <div class="project-card">
             <span class="project-number">01</span>
