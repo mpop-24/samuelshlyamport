@@ -60,7 +60,6 @@ projectsSection.innerHTML = `
 const hobbiesSection = document.getElementById('hobbies');
 hobbiesSection.innerHTML = `
     <h2>Interests</h2>
-    <p class="hobbies-subtitle">What fills the spaces between lines of code and technical design problems.</p>
     <div class="hobbies-grid">
         ${portfolioData.hobbies.map(hobby => `
             <div class="hobby-card">
