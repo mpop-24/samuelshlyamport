@@ -269,11 +269,13 @@ section h2::before {
     background: transparent;
     border: 1px solid var(--border-subtle);
     margin-bottom: 3rem;
+    overflow: hidden;
 }
 
 .cv-preview-wrapper iframe {
     border: none;
     display: block;
+    vertical-align: bottom;
     background: transparent;
 }
 
@@ -480,6 +482,14 @@ footer {
         height: 360px;
     }
 
+    .cv-preview-wrapper iframe {
+        height: 480px !important; /* Forces the box to shrink to eliminate empty vertical gaps */
+    }
+
+    .cv-preview-wrapper {
+        margin-bottom: 2rem;
+    }
+
     .agency-contact-btn {
         width: 100%;
         padding: 1.2rem 2rem;
@@ -493,5 +503,11 @@ footer {
     
     footer {
         padding: 4rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cv-preview-wrapper iframe {
+        height: 380px !important; /* Extra squeeze for micro phone viewports */
     }
 }

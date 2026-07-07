@@ -70,19 +70,16 @@ hobbiesSection.innerHTML = `
         `).join('')}
     </div>
 `;
-
-// Render CV Section (Clean Embed Parameters)
 const cvSection = document.getElementById('cv');
 cvSection.innerHTML = `
     <h2>Curriculum Vitae</h2>
     <div class="cv-container">
         <div class="cv-preview-wrapper">
-            <iframe src="${portfolioData.profile.cvUrl}#toolbar=0&navpanes=0&view=FitH" width="100%" height="800px"></iframe>
+            <iframe src="${portfolioData.profile.cvUrl}#toolbar=0&navpanes=0&view=FitH" width="100%" height="800"></iframe>
         </div>
         <a href="${portfolioData.profile.cvUrl}" download class="download-btn">Download Full PDF</a>
     </div>
 `;
-
 const contactSection = document.getElementById('contact');
 contactSection.innerHTML = `
     <h2>Let's Connect</h2>
