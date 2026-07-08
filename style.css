@@ -18,17 +18,17 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-}
-
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: var(--bg-dark);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    width: 100%;
+}
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
 }
 
 /* --- 🧭 Global Navigation --- */
@@ -66,19 +66,20 @@ nav a:hover {
     color: var(--accent-neon);
 }
 
-/* --- 🚀 Asymmetrical Typography Hero --- */
+/* --- 🚀 Full-Screen Background Hero --- */
 #hero {
     height: 100vh;
-    display: grid;
-    grid-template-columns: 1.3fr 0.7fr;
+    width: 100vw; /* Forces it to use 100% of the browser window width */
+    max-width: 100% !important; /* Overrides any global container restrictions */
+    display: flex;
     align-items: center;
     padding: 0 4rem;
-    gap: 4rem;
-    background: radial-gradient(circle at 10% 20%, rgba(0, 85, 255, 0.08) 0%, transparent 50%);
+    position: relative;
+    background: linear-gradient(rgba(5, 5, 8, 0.6), rgba(5, 5, 8, 0.85)), url('./images/hero-bg.jpg') center/cover no-repeat;
 }
-
 .hero-overlay {
     z-index: 2;
+    max-width: 900px;
 }
 
 #hero h1 {
@@ -93,15 +94,7 @@ nav a:hover {
 }
 
 #hero::after {
-    content: '';
-    position: absolute;
-    right: 4rem;
-    width: 28vw;
-    height: 68vh;
-    background: url('./images/hero-bg.jpg') center/cover no-repeat;
-    border: 1px solid var(--border-subtle);
-    box-shadow: 20px -20px 0px var(--accent-blue);
-    z-index: 1;
+    display: none;
 }
 
 /* --- 🔲 Structure Containers --- */
@@ -389,27 +382,17 @@ footer {
     }
 
     #hero {
-        grid-template-columns: 1fr;
-        height: auto;
-        padding: 10rem 2rem 4rem 2rem;
+        padding: 0 2rem;
         text-align: center;
-        gap: 3rem;
+        justify-content: center;
     }
 
     #hero h1 {
         font-size: 4rem;
-        margin-bottom: 2rem;
     }
 
     #hero::after {
-        position: relative;
-        right: auto;
-        width: 100%;
-        max-width: 450px;
-        height: 55vh;
-        margin: 0 auto;
-        display: block;
-        box-shadow: 15px -15px 0px var(--accent-blue);
+        display: none;
     }
 
     .projects-grid {
@@ -437,18 +420,9 @@ footer {
         display: none; 
     }
 
-    #hero {
-        padding-top: 8rem;
-    }
-
     #hero h1 {
         font-size: 2.8rem;
         letter-spacing: -1px;
-    }
-
-    #hero::after {
-        height: 45vh;
-        max-width: 100%;
     }
 
     section {
@@ -483,7 +457,7 @@ footer {
     }
 
     .cv-preview-wrapper iframe {
-        height: 480px !important; /* Forces the box to shrink to eliminate empty vertical gaps */
+        height: 480px !important;
     }
 
     .cv-preview-wrapper {
@@ -508,6 +482,6 @@ footer {
 
 @media (max-width: 480px) {
     .cv-preview-wrapper iframe {
-        height: 380px !important; /* Extra squeeze for micro phone viewports */
+        height: 380px !important;
     }
 }
